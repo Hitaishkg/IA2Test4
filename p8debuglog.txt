@@ -1,1 +1,99 @@
-
+Breakpoint 1, main () at p8final.c:37
+37  int main(){
+(gdb) n
+40      n=input_no_camels();
+(gdb) s
+input_no_camels () at p8final.c:13
+13  int input_no_camels(){
+(gdb) n
+15      printf("Enter the total number of camels in the truck\n");
+(gdb) n
+Enter the total number of camels in the truck
+16      scanf("%d",&n);
+(gdb) n
+2
+17      return n;
+(gdb) n
+18  }
+(gdb) n
+main () at p8final.c:41
+41      weight_of_truck=input_truck_weight();
+(gdb) s
+input_truck_weight () at p8final.c:7
+7   float input_truck_weight(){
+(gdb) 
+9       printf("Enter the empty weight of the truck\n");
+(gdb) n
+Enter the empty weight of the truck
+10      scanf("%f",&z);
+(gdb) n
+50
+11      return z;
+(gdb) n
+12  }
+(gdb) n
+main () at p8final.c:42
+42      camel c[n];
+(gdb) n
+43      input_camel_details(n,c);
+(gdb) s
+input_camel_details (n=2, c=0x7ffca924f300) at p8final.c:20
+20      for(int i=0;i<n;i++){
+(gdb) n
+21          printf("Enter the %d camel radius,height,lenght respectively\n",i+1);
+(gdb) n
+Enter the 1 camel radius,height,lenght respectively
+22          scanf("%f %f %f",&c[i].radius,&c[i].height,&c[i].length);
+(gdb) n
+2 3 4
+20      for(int i=0;i<n;i++){
+(gdb) n
+21          printf("Enter the %d camel radius,height,lenght respectively\n",i+1);
+(gdb) n
+Enter the 2 camel radius,height,lenght respectively
+22          scanf("%f %f %f",&c[i].radius,&c[i].height,&c[i].length);
+(gdb) n
+2 3 4
+20      for(int i=0;i<n;i++){
+(gdb) n
+24  }
+(gdb) n
+main () at p8final.c:44
+44      total_truck_weight=compute_total_weight(n,c,weight_of_truck);
+(gdb) s
+compute_total_weight (n=2, c=0x7ffca924f300, truck_weight=50) at p8final.c:26
+26      float weight_of_camels=0,total_weight=0;
+(gdb) n
+27      for(int i=0;i<n;i++){
+(gdb) n
+28           c[i].weight=3.14 * (c[i].radius * c[i].radius * c[i].radius) * sqrt(c[i].height * c[i].length);
+(gdb) n
+29      weight_of_camels+=c[i].weight;
+(gdb) n
+27      for(int i=0;i<n;i++){
+(gdb) n
+28           c[i].weight=3.14 * (c[i].radius * c[i].radius * c[i].radius) * sqrt(c[i].height * c[i].length);
+(gdb) n
+29      weight_of_camels+=c[i].weight;
+(gdb) n
+27      for(int i=0;i<n;i++){
+(gdb) n
+31      total_weight=weight_of_camels + truck_weight;
+(gdb) n
+32      return total_weight;
+(gdb) n
+33  }
+(gdb) n
+main () at p8final.c:45
+45      output(total_truck_weight);
+(gdb) s
+output (total_truck_weight=224.036469) at p8final.c:35
+35      printf("The total truck weight is %.2f\n",total_truck_weight);
+(gdb) n
+The total truck weight is 224.04
+36  }
+(gdb) n
+main () at p8final.c:46
+46      return 0;
+(gdb) n
+47  }(gdb)
